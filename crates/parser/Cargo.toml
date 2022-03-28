@@ -1,5 +1,5 @@
 [package]
-name = "wit-parser"
+name = "cosmian-wit-parser"
 version = "0.1.0"
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
 edition = "2018"
@@ -8,7 +8,7 @@ edition = "2018"
 id-arena = "2"
 anyhow = "1.0"
 pulldown-cmark = { version = "0.8", default-features = false }
-witx = { git = 'https://github.com/alexcrichton/WASI', branch = 'abi-next', optional = true }
+witx = { version = "0.8.8", optional = true }
 wast = { version = "33", default-features = false, optional = true }
 
 [dev-dependencies]
