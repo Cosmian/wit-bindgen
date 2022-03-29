@@ -1,7 +1,7 @@
 use crate::module::Interface;
 use std::collections::HashMap;
 use wasm_encoder::{BlockType, Instruction, MemArg, ValType};
-use wit_parser::{
+use cosmian_wit_parser::{
     abi::WasmSignature, Function, Int, Interface as WitInterface, RecordKind, SizeAlign, Type,
     TypeDefKind,
 };

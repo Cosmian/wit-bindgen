@@ -1,15 +1,15 @@
 [package]
-name = "wit-bindgen-gen-core"
-version = "0.1.0"
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
 edition = "2018"
+name = "cosmian-wit-bindgen-gen-core"
+version = "0.1.0"
 
 [lib]
 doctest = false
 
 [dependencies]
-wit-parser = { path = '../parser' }
 anyhow = "1"
+cosmian-wit-parser = {path = '../parser', version = '0.1.0'}
 
 [features]
-witx-compat = ['wit-parser/witx-compat']
+witx-compat = ['cosmian-wit-parser/witx-compat']

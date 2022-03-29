@@ -8,7 +8,7 @@ use wasmparser::{
     Chunk, Export, ExternalKind, FuncType, Import, ImportSectionEntryType, Parser, Payload, Range,
     SectionReader, Type, TypeDef, Validator,
 };
-use wit_parser::{
+use cosmian_wit_parser::{
     abi::{AbiVariant, WasmSignature, WasmType},
     Function, Interface as WitInterface, SizeAlign, Type as WitType,
 };
@@ -41,7 +41,7 @@ pub(crate) fn export_kind(kind: ExternalKind) -> &'static str {
 }
 
 fn has_list(interface: &WitInterface, ty: &WitType) -> bool {
-    use wit_parser::{Type, TypeDefKind};
+    use cosmian_wit_parser::{Type, TypeDefKind};
 
     match ty {
         Type::Id(id) => match &interface.types[*id].kind {

@@ -36,7 +36,7 @@ pub fn codegen_rust_wasm_import(input: TokenStream) -> TokenStream {
 pub fn codegen_rust_wasm_export(input: TokenStream) -> TokenStream {
     use heck::*;
     use std::collections::BTreeMap;
-    use wit_parser::{FunctionKind, Type, TypeDefKind};
+    use cosmian_wit_parser::{FunctionKind, Type, TypeDefKind};
 
     return gen_rust(
         input,
@@ -60,7 +60,7 @@ pub fn codegen_rust_wasm_export(input: TokenStream) -> TokenStream {
         ],
     );
 
-    fn gen_extra(iface: &wit_parser::Interface) -> proc_macro2::TokenStream {
+    fn gen_extra(iface: &cosmian_wit_parser::Interface) -> proc_macro2::TokenStream {
         let mut ret = quote::quote!();
         if iface.resources.len() == 0 && iface.functions.len() == 0 {
             return ret;
@@ -140,8 +140,8 @@ pub fn codegen_rust_wasm_export(input: TokenStream) -> TokenStream {
 
     fn quote_ty(
         param: bool,
-        iface: &wit_parser::Interface,
-        ty: &wit_parser::Type,
+        iface: &cosmian_wit_parser::Interface,
+        ty: &cosmian_wit_parser::Type,
     ) -> proc_macro2::TokenStream {
         match *ty {
             Type::U8 => quote::quote! { u8 },
@@ -168,8 +168,8 @@ pub fn codegen_rust_wasm_export(input: TokenStream) -> TokenStream {
 
     fn quote_id(
         param: bool,
-        iface: &wit_parser::Interface,
-        id: wit_parser::TypeId,
+        iface: &cosmian_wit_parser::Interface,
+        id: cosmian_wit_parser::TypeId,
     ) -> proc_macro2::TokenStream {
         let ty = &iface.types[id];
         if let Some(name) = &ty.name {
@@ -357,7 +357,7 @@ fn generate_tests<G>(
     input: TokenStream,
     dir: &str,
     mkgen: impl Fn(&Path) -> (G, Direction),
-) -> Vec<(wit_parser::Interface, PathBuf, PathBuf)>
+) -> Vec<(cosmian_wit_parser::Interface, PathBuf, PathBuf)>
 where
     G: Generator,
 {
@@ -397,7 +397,7 @@ where
     for test in tests {
         let (mut gen, dir) = mkgen(&test);
         let mut files = Default::default();
-        let iface = wit_parser::Interface::parse_file(&test).unwrap();
+        let iface = cosmian_wit_parser::Interface::parse_file(&test).unwrap();
         let (mut imports, mut exports) = match dir {
             Direction::Import => (vec![iface], vec![]),
             Direction::Export => (vec![], vec![iface]),
@@ -448,7 +448,7 @@ fn gen_rust<G: Generator>(
     tests: &[(
         &'static str,
         fn() -> G,
-        fn(&wit_parser::Interface) -> proc_macro2::TokenStream,
+        fn(&cosmian_wit_parser::Interface) -> proc_macro2::TokenStream,
     )],
 ) -> TokenStream {
     let mut ret = proc_macro2::TokenStream::new();

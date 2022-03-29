@@ -26,6 +26,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
+name = "cosmian-wit-bindgen-gen-core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "cosmian-wit-parser",
+]
+
+[[package]]
+name = "cosmian-wit-parser"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "id-arena",
+ "pulldown-cmark",
+]
+
+[[package]]
 name = "flags"
 version = "0.1.0"
 dependencies = [
@@ -233,27 +250,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5fecdca9a5291cc2b8dcf7dc02453fee791a280f3743cb0905f8822ae463b3fe"
 
 [[package]]
-name = "wit-bindgen-gen-core"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "wit-parser",
-]
-
-[[package]]
 name = "wit-bindgen-gen-rust"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
- "wit-bindgen-gen-core",
 ]
 
 [[package]]
 name = "wit-bindgen-gen-rust-wasm"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-rust",
 ]
 
@@ -270,17 +279,8 @@ dependencies = [
 name = "wit-bindgen-rust-impl"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "proc-macro2",
  "syn",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-rust-wasm",
-]
-
-[[package]]
-name = "wit-parser"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "id-arena",
- "pulldown-cmark",
 ]

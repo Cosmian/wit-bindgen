@@ -1,19 +1,19 @@
 [package]
-name = "wit-bindgen-gen-spidermonkey"
-version = "0.1.0"
 authors = ["Nick Fitzgerald <fitzgen@gmail.com>"]
 edition = "2018"
+name = "wit-bindgen-gen-spidermonkey"
+version = "0.1.0"
 
 [lib]
-test = false
 doctest = false
+test = false
 
 [dependencies]
+cosmian-wit-bindgen-gen-core = {path = "../gen-core"}
 lazy_static = "1.4.0"
-structopt = { version = "0.3", optional = true }
+structopt = {version = "0.3", optional = true}
 wasm-encoder = "0.8.0"
-wit-bindgen-gen-core = { path = "../gen-core" }
 
 [dev-dependencies]
-test-helpers = { path = '../test-helpers', features = ['wit-bindgen-gen-spidermonkey'] }
+test-helpers = {path = '../test-helpers', features = ['wit-bindgen-gen-spidermonkey']}
 wasmparser = "0.80"

@@ -247,6 +247,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmian-wit-bindgen-gen-core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "cosmian-wit-parser",
+]
+
+[[package]]
+name = "cosmian-wit-parser"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "id-arena",
+ "pulldown-cmark",
+ "rayon",
+ "serde",
+ "serde_json",
+ "wast 33.0.0",
+ "witx 0.8.8",
+]
+
+[[package]]
 name = "cpp_demangle"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1385,19 +1407,19 @@ name = "test-helpers"
 version = "0.1.0"
 dependencies = [
  "backtrace",
+ "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-parser",
  "filetime",
  "heck",
  "ignore",
  "proc-macro2",
  "quote",
  "wit-bindgen-gen-c",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-js",
  "wit-bindgen-gen-rust-wasm",
  "wit-bindgen-gen-spidermonkey",
  "wit-bindgen-gen-wasmtime",
  "wit-bindgen-gen-wasmtime-py",
- "wit-parser",
 ]
 
 [[package]]
@@ -1405,10 +1427,10 @@ name = "test-modules"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "cosmian-wit-parser",
  "wasmlink",
  "wasmtime",
  "wasmtime-wasi",
- "wit-parser",
 ]
 
 [[package]]
@@ -1623,6 +1645,7 @@ name = "wasmlink"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "cosmian-wit-parser",
  "heck",
  "lazy_static",
  "petgraph",
@@ -1631,7 +1654,6 @@ dependencies = [
  "wasmparser 0.78.2",
  "wasmprinter",
  "wat",
- "wit-parser",
 ]
 
 [[package]]
@@ -1639,12 +1661,12 @@ name = "wasmlink-cli"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "cosmian-wit-parser",
  "env_logger 0.8.4",
  "log",
  "structopt",
  "wasmlink",
  "wat",
- "wit-parser",
 ]
 
 [[package]]
@@ -1858,6 +1880,15 @@ dependencies = [
 
 [[package]]
 name = "wast"
+version = "22.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fe1220ed7f824992b426a76125a3403d048eaf0f627918e97ade0d9b9d510d20"
+dependencies = [
+ "leb128",
+]
+
+[[package]]
+name = "wast"
 version = "33.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1d04fe175c7f78214971293e7d8875673804e736092206a3a4544dbc12811c1b"
@@ -1981,9 +2012,9 @@ name = "wit-bindgen-cli"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "cosmian-wit-bindgen-gen-core",
  "structopt",
  "wit-bindgen-gen-c",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-js",
  "wit-bindgen-gen-markdown",
  "wit-bindgen-gen-rust-wasm",
@@ -1996,9 +2027,9 @@ dependencies = [
 name = "wit-bindgen-demo"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "wasmprinter",
  "wit-bindgen-gen-c",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-js",
  "wit-bindgen-gen-markdown",
  "wit-bindgen-gen-rust-wasm",
@@ -2012,56 +2043,48 @@ dependencies = [
 name = "wit-bindgen-gen-c"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
  "structopt",
  "test-helpers",
- "wit-bindgen-gen-core",
-]
-
-[[package]]
-name = "wit-bindgen-gen-core"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "wit-parser",
 ]
 
 [[package]]
 name = "wit-bindgen-gen-js"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
  "structopt",
  "test-helpers",
- "wit-bindgen-gen-core",
 ]
 
 [[package]]
 name = "wit-bindgen-gen-markdown"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
  "pulldown-cmark",
  "structopt",
- "wit-bindgen-gen-core",
 ]
 
 [[package]]
 name = "wit-bindgen-gen-rust"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
- "wit-bindgen-gen-core",
 ]
 
 [[package]]
 name = "wit-bindgen-gen-rust-wasm"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
  "structopt",
  "test-helpers",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-rust",
  "wit-bindgen-rust",
 ]
@@ -2070,12 +2093,12 @@ dependencies = [
 name = "wit-bindgen-gen-spidermonkey"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "lazy_static",
  "structopt",
  "test-helpers",
  "wasm-encoder 0.8.0",
  "wasmparser 0.80.1",
- "wit-bindgen-gen-core",
 ]
 
 [[package]]
@@ -2083,12 +2106,12 @@ name = "wit-bindgen-gen-wasmtime"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "cosmian-wit-bindgen-gen-core",
  "heck",
  "structopt",
  "test-helpers",
  "wasmtime",
  "wasmtime-wasi",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-rust",
  "wit-bindgen-wasmtime",
 ]
@@ -2097,10 +2120,10 @@ dependencies = [
 name = "wit-bindgen-gen-wasmtime-py"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "heck",
  "structopt",
  "test-helpers",
- "wit-bindgen-gen-core",
 ]
 
 [[package]]
@@ -2116,9 +2139,9 @@ dependencies = [
 name = "wit-bindgen-rust-impl"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "proc-macro2",
  "syn",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-rust-wasm",
 ]
 
@@ -2139,24 +2162,22 @@ dependencies = [
 name = "wit-bindgen-wasmtime-impl"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-gen-core",
  "proc-macro2",
  "syn",
- "wit-bindgen-gen-core",
  "wit-bindgen-gen-wasmtime",
 ]
 
 [[package]]
-name = "wit-parser"
-version = "0.1.0"
+name = "witx"
+version = "0.8.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1be02433ed9b7ddcebf9431066d96d7f62d0de3bfa3b9a2af4a239303da575e4"
 dependencies = [
  "anyhow",
- "id-arena",
- "pulldown-cmark",
- "rayon",
- "serde",
- "serde_json",
- "wast 33.0.0",
- "witx 0.10.0",
+ "log",
+ "thiserror",
+ "wast 22.0.0",
 ]
 
 [[package]]
@@ -2169,17 +2190,6 @@ dependencies = [
  "log",
  "thiserror",
  "wast 35.0.2",
-]
-
-[[package]]
-name = "witx"
-version = "0.10.0"
-source = "git+https://github.com/alexcrichton/WASI?branch=abi-next#70a8c6363fb26be655e59a2587bd191e7baee59b"
-dependencies = [
- "anyhow",
- "log",
- "thiserror",
- "wast 33.0.0",
 ]
 
 [[package]]
