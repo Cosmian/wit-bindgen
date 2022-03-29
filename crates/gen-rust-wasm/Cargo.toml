@@ -1,6 +1,8 @@
 [package]
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
+description = "wit-bindgen-gen-rust-wasm"
 edition = "2018"
+license = "Apache-2.0"
 name = "cosmian-wit-bindgen-gen-rust-wasm"
 version = "0.1.0"
 

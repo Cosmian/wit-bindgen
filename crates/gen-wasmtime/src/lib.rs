@@ -1,16 +1,18 @@
+use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::abi::{
+    Abi, AbiVariant, Bindgen, Instruction, LiftLower, WasmType, WitxInstruction,
+};
+use cosmian_wit_bindgen_gen_core::{
+    cosmian_wit_parser::*, Direction, Files, Generator, Source, TypeInfo, Types,
+};
+use cosmian_wit_bindgen_gen_rust::{
+    int_repr, to_rust_ident, wasm_type, FnSig, RustFunctionGenerator, RustGenerator, TypeMode,
+};
 use heck::*;
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 use std::io::{Read, Write};
 use std::mem;
 use std::process::{Command, Stdio};
 use std::str::FromStr;
-use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::abi::{
-    Abi, AbiVariant, Bindgen, Instruction, LiftLower, WasmType, WitxInstruction,
-};
-use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser::*, Direction, Files, Generator, Source, TypeInfo, Types};
-use wit_bindgen_gen_rust::{
-    int_repr, to_rust_ident, wasm_type, FnSig, RustFunctionGenerator, RustGenerator, TypeMode,
-};
 
 #[derive(Default)]
 pub struct Wasmtime {
@@ -1670,7 +1672,7 @@ impl Bindgen for FunctionBindgen<'_> {
             }
 
             Instruction::Bitcasts { casts } => {
-                wit_bindgen_gen_rust::bitcast(casts, operands, results)
+                cosmian_wit_bindgen_gen_rust::bitcast(casts, operands, results)
             }
 
             Instruction::I32FromOwnedHandle { ty } => {
