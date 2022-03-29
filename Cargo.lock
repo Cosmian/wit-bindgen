@@ -255,6 +255,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmian-wit-bindgen-gen-rust"
+version = "0.1.0"
+dependencies = [
+ "cosmian-wit-bindgen-gen-core",
+ "heck",
+]
+
+[[package]]
+name = "cosmian-wit-bindgen-gen-rust-wasm"
+version = "0.1.0"
+dependencies = [
+ "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust",
+ "heck",
+ "structopt",
+ "test-helpers",
+ "wit-bindgen-rust",
+]
+
+[[package]]
 name = "cosmian-wit-parser"
 version = "0.1.0"
 dependencies = [
@@ -1408,6 +1428,7 @@ version = "0.1.0"
 dependencies = [
  "backtrace",
  "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust-wasm",
  "cosmian-wit-parser",
  "filetime",
  "heck",
@@ -1416,7 +1437,6 @@ dependencies = [
  "quote",
  "wit-bindgen-gen-c",
  "wit-bindgen-gen-js",
- "wit-bindgen-gen-rust-wasm",
  "wit-bindgen-gen-spidermonkey",
  "wit-bindgen-gen-wasmtime",
  "wit-bindgen-gen-wasmtime-py",
@@ -2013,11 +2033,11 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust-wasm",
  "structopt",
  "wit-bindgen-gen-c",
  "wit-bindgen-gen-js",
  "wit-bindgen-gen-markdown",
- "wit-bindgen-gen-rust-wasm",
  "wit-bindgen-gen-spidermonkey",
  "wit-bindgen-gen-wasmtime",
  "wit-bindgen-gen-wasmtime-py",
@@ -2028,11 +2048,11 @@ name = "wit-bindgen-demo"
 version = "0.1.0"
 dependencies = [
  "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust-wasm",
  "wasmprinter",
  "wit-bindgen-gen-c",
  "wit-bindgen-gen-js",
  "wit-bindgen-gen-markdown",
- "wit-bindgen-gen-rust-wasm",
  "wit-bindgen-gen-spidermonkey",
  "wit-bindgen-gen-wasmtime",
  "wit-bindgen-gen-wasmtime-py",
@@ -2070,26 +2090,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "wit-bindgen-gen-rust"
-version = "0.1.0"
-dependencies = [
- "cosmian-wit-bindgen-gen-core",
- "heck",
-]
-
-[[package]]
-name = "wit-bindgen-gen-rust-wasm"
-version = "0.1.0"
-dependencies = [
- "cosmian-wit-bindgen-gen-core",
- "heck",
- "structopt",
- "test-helpers",
- "wit-bindgen-gen-rust",
- "wit-bindgen-rust",
-]
-
-[[package]]
 name = "wit-bindgen-gen-spidermonkey"
 version = "0.1.0"
 dependencies = [
@@ -2107,12 +2107,12 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust",
  "heck",
  "structopt",
  "test-helpers",
  "wasmtime",
  "wasmtime-wasi",
- "wit-bindgen-gen-rust",
  "wit-bindgen-wasmtime",
 ]
 
@@ -2140,9 +2140,9 @@ name = "wit-bindgen-rust-impl"
 version = "0.1.0"
 dependencies = [
  "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust-wasm",
  "proc-macro2",
  "syn",
- "wit-bindgen-gen-rust-wasm",
 ]
 
 [[package]]
