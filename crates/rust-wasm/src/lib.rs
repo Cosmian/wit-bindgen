@@ -1,9 +1,9 @@
 pub use async_trait::async_trait;
+pub use cosmian_wit_bindgen_rust_impl::{export, import};
 use std::fmt;
 use std::marker;
 use std::mem;
 use std::ops::Deref;
-pub use wit_bindgen_rust_impl::{export, import};
 
 pub mod exports;
 mod futures;
