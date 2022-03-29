@@ -86,7 +86,7 @@ which uses interface types. This means that these languages support
 
 * `rust-wasm` - this is for Rust compiled to WebAssembly, typically using either
   the `wasm32-wasi` or `wasm32-unknown-unknown` targets depending on your use
-  case. In this mode you'd probably depend on the `wit-bindgen-rust` crate
+  case. In this mode you'd probably depend on the `cosmian-wit-bindgen-rust` crate
   (located at `crates/rust-wasm`) and use the `import!` and `export!` macros to
   generate code.
 

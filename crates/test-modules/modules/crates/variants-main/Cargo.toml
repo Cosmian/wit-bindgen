@@ -1,9 +1,9 @@
 [package]
-name = "variants-main"
-version = "0.1.0"
 authors = ["Peter Huene <peter@huene.dev>"]
 edition = "2018"
+name = "variants-main"
 publish = false
+version = "0.1.0"
 
 [dependencies]
-wit-bindgen-rust = { path = "../../../../rust-wasm" }
+cosmian-wit-bindgen-rust = {path = "../../../../rust-wasm"}

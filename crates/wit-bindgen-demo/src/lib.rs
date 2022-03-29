@@ -15,7 +15,7 @@ impl demo::Demo for Demo {}
 pub struct Config {
     js: RefCell<wit_bindgen_gen_js::Opts>,
     c: RefCell<wit_bindgen_gen_c::Opts>,
-    rust: RefCell<wit_bindgen_gen_rust_wasm::Opts>,
+    rust: RefCell<cosmian_wit_bindgen_gen_rust_wasm::Opts>,
     wasmtime: RefCell<wit_bindgen_gen_wasmtime::Opts>,
     wasmtime_py: RefCell<wit_bindgen_gen_wasmtime_py::Opts>,
     markdown: RefCell<wit_bindgen_gen_markdown::Opts>,

@@ -1,13 +1,13 @@
 [package]
-name = "resources"
-version = "0.1.0"
 authors = ["Peter Huene <peter@huene.dev>"]
 edition = "2018"
+name = "resources"
 publish = false
+version = "0.1.0"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
+cosmian-wit-bindgen-rust = {path = "../../../../rust-wasm"}
 lazy_static = "1.4.0"
-wit-bindgen-rust = { path = "../../../../rust-wasm" }

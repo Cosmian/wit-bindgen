@@ -1,13 +1,13 @@
 [package]
-name = "test-rust-wasm"
-version = "0.1.0"
 authors = ["Alex Crichton <alex@alexcrichton.com>"]
 edition = "2018"
+name = "test-rust-wasm"
 publish = false
+version = "0.1.0"
 
 [dependencies]
-futures-util = { version = "0.3.17", default-features = true }
-wit-bindgen-rust = { path = "../rust-wasm", features = ['witx-compat'] }
+cosmian-wit-bindgen-rust = {path = "../rust-wasm", features = ['witx-compat']}
+futures-util = {version = "0.3.17", default-features = true}
 
 [features]
 unchecked = []

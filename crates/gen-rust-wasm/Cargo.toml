@@ -17,8 +17,8 @@ heck = "0.3"
 structopt = {version = "0.3", default-features = false, optional = true}
 
 [dev-dependencies]
+cosmian-wit-bindgen-rust = {path = '../rust-wasm'}
 test-helpers = {path = '../test-helpers', features = ['cosmian-wit-bindgen-gen-rust-wasm']}
-wit-bindgen-rust = {path = '../rust-wasm'}
 
 [features]
 witx-compat = ['cosmian-wit-bindgen-gen-core/witx-compat']

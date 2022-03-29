@@ -1,10 +1,10 @@
+use cosmian_wit_bindgen_gen_core::{Direction, Generator};
 use ignore::gitignore::GitignoreBuilder;
 use proc_macro::{TokenStream, TokenTree};
 use std::env;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::{Duration, SystemTime};
-use cosmian_wit_bindgen_gen_core::{Direction, Generator};
 
 #[proc_macro]
 #[cfg(feature = "cosmian-wit-bindgen-gen-rust-wasm")]
@@ -15,13 +15,13 @@ pub fn codegen_rust_wasm_import(input: TokenStream) -> TokenStream {
         &[
             (
                 "import",
-                || wit_bindgen_gen_rust_wasm::Opts::default().build(),
+                || cosmian_wit_bindgen_gen_rust_wasm::Opts::default().build(),
                 |_| quote::quote!(),
             ),
             (
                 "import-unchecked",
                 || {
-                    let mut opts = wit_bindgen_gen_rust_wasm::Opts::default();
+                    let mut opts = cosmian_wit_bindgen_gen_rust_wasm::Opts::default();
                     opts.unchecked = true;
                     opts.build()
                 },
@@ -44,13 +44,13 @@ pub fn codegen_rust_wasm_export(input: TokenStream) -> TokenStream {
         &[
             (
                 "export",
-                || wit_bindgen_gen_rust_wasm::Opts::default().build(),
+                || cosmian_wit_bindgen_gen_rust_wasm::Opts::default().build(),
                 gen_extra,
             ),
             (
                 "export-unchecked",
                 || {
-                    let mut opts = wit_bindgen_gen_rust_wasm::Opts::default();
+                    let mut opts = cosmian_wit_bindgen_gen_rust_wasm::Opts::default();
                     opts.unchecked = true;
                     opts.symbol_namespace = "unchecked".to_string();
                     opts.build()

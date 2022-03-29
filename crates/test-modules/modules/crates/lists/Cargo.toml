@@ -1,12 +1,12 @@
 [package]
-name = "lists"
-version = "0.1.0"
 authors = ["Peter Huene <peter@huene.dev>"]
 edition = "2018"
+name = "lists"
 publish = false
+version = "0.1.0"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
-wit-bindgen-rust = { path = "../../../../rust-wasm" }
+cosmian-wit-bindgen-rust = {path = "../../../../rust-wasm"}

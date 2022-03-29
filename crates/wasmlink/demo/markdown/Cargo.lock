@@ -52,7 +52,7 @@ version = "2.2.1"
 [[package]]
 dependencies = [
   "pulldown-cmark",
-  "wit-bindgen-rust",
+  "cosmian-wit-bindgen-rust",
 ]
 name = "markdown"
 version = "0.1.0"
@@ -165,9 +165,9 @@ version = "0.1.0"
 [[package]]
 dependencies = [
   "async-trait",
-  "wit-bindgen-rust-impl",
+  "cosmian-wit-bindgen-rust-impl",
 ]
-name = "wit-bindgen-rust"
+name = "cosmian-wit-bindgen-rust"
 version = "0.1.0"
 
 [[package]]
@@ -177,7 +177,7 @@ dependencies = [
   "cosmian-wit-bindgen-gen-core",
   "cosmian-wit-bindgen-gen-rust-wasm",
 ]
-name = "wit-bindgen-rust-impl"
+name = "cosmian-wit-bindgen-rust-impl"
 version = "0.1.0"
 
 [[package]]

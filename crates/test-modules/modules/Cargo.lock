@@ -51,6 +51,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmian-wit-bindgen-rust"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "bitflags",
+ "cosmian-wit-bindgen-rust-impl",
+]
+
+[[package]]
+name = "cosmian-wit-bindgen-rust-impl"
+version = "0.1.0"
+dependencies = [
+ "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust-wasm",
+ "proc-macro2",
+ "syn",
+]
+
+[[package]]
 name = "cosmian-wit-parser"
 version = "0.1.0"
 dependencies = [
@@ -63,14 +82,14 @@ dependencies = [
 name = "flags"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "flags-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
@@ -98,14 +117,14 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 name = "lists"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "lists-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
@@ -118,21 +137,21 @@ checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
 name = "nested-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "nested_a"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "nested_b"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
@@ -168,36 +187,36 @@ dependencies = [
 name = "records"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "records-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "resources"
 version = "0.1.0"
 dependencies = [
+ "cosmian-wit-bindgen-rust",
  "lazy_static",
- "wit-bindgen-rust",
 ]
 
 [[package]]
 name = "resources-invalid-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "resources-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
@@ -215,14 +234,14 @@ dependencies = [
 name = "types"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "types-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
@@ -250,14 +269,14 @@ checksum = "8ccb82d61f80a663efe1f787a51b16b5a51e3314d6ac365b08639f52387b33f3"
 name = "variants"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
 name = "variants-main"
 version = "0.1.0"
 dependencies = [
- "wit-bindgen-rust",
+ "cosmian-wit-bindgen-rust",
 ]
 
 [[package]]
@@ -265,22 +284,3 @@ name = "version_check"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5fecdca9a5291cc2b8dcf7dc02453fee791a280f3743cb0905f8822ae463b3fe"
-
-[[package]]
-name = "wit-bindgen-rust"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "bitflags",
- "wit-bindgen-rust-impl",
-]
-
-[[package]]
-name = "wit-bindgen-rust-impl"
-version = "0.1.0"
-dependencies = [
- "cosmian-wit-bindgen-gen-core",
- "cosmian-wit-bindgen-gen-rust-wasm",
- "proc-macro2",
- "syn",
-]

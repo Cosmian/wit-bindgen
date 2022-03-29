@@ -14,7 +14,7 @@ struct Opt {
 enum Command {
     RustWasm {
         #[structopt(flatten)]
-        opts: wit_bindgen_gen_rust_wasm::Opts,
+        opts: cosmian_wit_bindgen_gen_rust_wasm::Opts,
         #[structopt(flatten)]
         common: Common,
     },
