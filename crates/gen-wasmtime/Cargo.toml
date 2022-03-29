@@ -10,9 +10,9 @@ test = false
 
 [dependencies]
 cosmian-wit-bindgen-gen-core = {path = '../gen-core', version = '0.1.0'}
+cosmian-wit-bindgen-gen-rust = {path = '../gen-rust', version = '0.1.0'}
 heck = "0.3"
 structopt = {version = "0.3", default-features = false, optional = true}
-wit-bindgen-gen-rust = {path = '../gen-rust', version = '0.1.0'}
 
 [dev-dependencies]
 anyhow = "1.0"

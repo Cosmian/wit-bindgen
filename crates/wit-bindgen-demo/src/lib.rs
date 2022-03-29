@@ -1,7 +1,7 @@
+use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::Interface;
+use cosmian_wit_bindgen_gen_core::Generator;
 use std::cell::RefCell;
 use std::sync::Once;
-use wit_bindgen_gen_core::wit_parser::Interface;
-use wit_bindgen_gen_core::Generator;
 use wit_bindgen_rust::Handle;
 
 wit_bindgen_rust::export!("./crates/wit-bindgen-demo/demo.wit");

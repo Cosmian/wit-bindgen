@@ -10,7 +10,7 @@ fn adapt(name: &str, bytes: &[u8], wit_path: &Path) -> Result<wasm_encoder::Modu
         name,
         bytes,
         if wit_path.is_file() {
-            vec![wit_parser::Interface::parse_file(wit_path)?]
+            vec![cosmian_wit_parser::Interface::parse_file(wit_path)?]
         } else {
             Vec::new()
         },

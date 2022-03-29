@@ -4,10 +4,10 @@ use std::env;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::{Duration, SystemTime};
-use wit_bindgen_gen_core::{Direction, Generator};
+use cosmian_wit_bindgen_gen_core::{Direction, Generator};
 
 #[proc_macro]
-#[cfg(feature = "wit-bindgen-gen-rust-wasm")]
+#[cfg(feature = "cosmian-wit-bindgen-gen-rust-wasm")]
 pub fn codegen_rust_wasm_import(input: TokenStream) -> TokenStream {
     gen_rust(
         input,
@@ -32,11 +32,11 @@ pub fn codegen_rust_wasm_import(input: TokenStream) -> TokenStream {
 }
 
 #[proc_macro]
-#[cfg(feature = "wit-bindgen-gen-rust-wasm")]
+#[cfg(feature = "cosmian-wit-bindgen-gen-rust-wasm")]
 pub fn codegen_rust_wasm_export(input: TokenStream) -> TokenStream {
+    use cosmian_wit_parser::{FunctionKind, Type, TypeDefKind};
     use heck::*;
     use std::collections::BTreeMap;
-    use cosmian_wit_parser::{FunctionKind, Type, TypeDefKind};
 
     return gen_rust(
         input,

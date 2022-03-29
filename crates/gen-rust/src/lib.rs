@@ -1,6 +1,6 @@
+use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::abi::{Bitcast, LiftLower, WasmType};
+use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser::*, TypeInfo, Types};
 use heck::*;
-use wit_bindgen_gen_core::wit_parser::abi::{Bitcast, LiftLower, WasmType};
-use wit_bindgen_gen_core::{wit_parser::*, TypeInfo, Types};
 
 #[derive(Debug, Copy, Clone, PartialEq)]
 pub enum TypeMode {

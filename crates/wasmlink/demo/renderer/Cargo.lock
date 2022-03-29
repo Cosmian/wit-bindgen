@@ -133,16 +133,16 @@ dependencies = [
   "heck",
   "cosmian-wit-bindgen-gen-core",
 ]
-name = "wit-bindgen-gen-rust"
+name = "cosmian-wit-bindgen-gen-rust"
 version = "0.1.0"
 
 [[package]]
 dependencies = [
   "heck",
   "cosmian-wit-bindgen-gen-core",
-  "wit-bindgen-gen-rust",
+  "cosmian-wit-bindgen-gen-rust",
 ]
-name = "wit-bindgen-gen-rust-wasm"
+name = "cosmian-wit-bindgen-gen-rust-wasm"
 version = "0.1.0"
 
 [[package]]
@@ -158,7 +158,7 @@ dependencies = [
   "proc-macro2",
   "syn",
   "cosmian-wit-bindgen-gen-core",
-  "wit-bindgen-gen-rust-wasm",
+  "cosmian-wit-bindgen-gen-rust-wasm",
 ]
 name = "wit-bindgen-rust-impl"
 version = "0.1.0"

@@ -13,9 +13,9 @@ test = false
 
 [dependencies]
 cosmian-wit-bindgen-gen-core = {path = "../gen-core", version = "0.1"}
+cosmian-wit-bindgen-gen-rust-wasm = {path = "../gen-rust-wasm", version = "0.1"}
 proc-macro2 = "1.0"
 syn = "1.0"
-wit-bindgen-gen-rust-wasm = {path = "../gen-rust-wasm", version = "0.1"}
 
 [features]
 witx-compat = ['cosmian-wit-bindgen-gen-core/witx-compat']

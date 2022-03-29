@@ -1,8 +1,8 @@
 use heck::*;
 use pulldown_cmark::{html, Event, LinkType, Parser, Tag};
 use std::collections::HashMap;
-use wit_bindgen_gen_core::cosmian_wit_parser::abi::AbiVariant;
-use wit_bindgen_gen_core::{cosmian_wit_parser, Direction, Files, Generator, Source};
+use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::abi::AbiVariant;
+use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser, Direction, Files, Generator, Source};
 use cosmian_wit_parser::*;
 
 #[derive(Default)]

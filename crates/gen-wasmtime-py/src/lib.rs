@@ -1,10 +1,10 @@
 use heck::*;
 use std::collections::{BTreeMap, BTreeSet, HashMap};
 use std::mem;
-use wit_bindgen_gen_core::wit_parser::abi::{
+use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::abi::{
     AbiVariant, Bindgen, Bitcast, Instruction, LiftLower, WasmType, WitxInstruction,
 };
-use wit_bindgen_gen_core::{wit_parser::*, Direction, Files, Generator, Ns};
+use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser::*, Direction, Files, Generator, Ns};
 
 #[derive(Default)]
 pub struct WasmtimePy {

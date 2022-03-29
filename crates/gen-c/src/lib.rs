@@ -1,10 +1,10 @@
 use heck::*;
 use std::collections::{BTreeSet, HashMap, HashSet};
 use std::mem;
-use wit_bindgen_gen_core::wit_parser::abi::{
+use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::abi::{
     AbiVariant, Bindgen, Bitcast, Instruction, LiftLower, WasmType, WitxInstruction,
 };
-use wit_bindgen_gen_core::{wit_parser::*, Direction, Files, Generator, Ns};
+use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser::*, Direction, Files, Generator, Ns};
 
 #[derive(Default)]
 pub struct C {
@@ -29,7 +29,7 @@ pub struct C {
 
     // Type definitions for the given `TypeId`. This is printed topologically
     // at the end.
-    types: HashMap<TypeId, wit_bindgen_gen_core::Source>,
+    types: HashMap<TypeId, cosmian_wit_bindgen_gen_core::Source>,
 
     needs_string: bool,
 }
@@ -1274,10 +1274,10 @@ struct FunctionBindgen<'a> {
     gen: &'a mut C,
     locals: Ns,
     // tmp: usize,
-    src: wit_bindgen_gen_core::Source,
+    src: cosmian_wit_bindgen_gen_core::Source,
     sig: CSig,
     func_to_call: &'a str,
-    block_storage: Vec<wit_bindgen_gen_core::Source>,
+    block_storage: Vec<cosmian_wit_bindgen_gen_core::Source>,
     blocks: Vec<(String, Vec<String>)>,
     payloads: Vec<String>,
     params: Vec<String>,
@@ -1913,8 +1913,8 @@ impl Bindgen for FunctionBindgen<'_> {
 
 #[derive(Default)]
 struct Source {
-    header: wit_bindgen_gen_core::Source,
-    src: wit_bindgen_gen_core::Source,
+    header: cosmian_wit_bindgen_gen_core::Source,
+    src: cosmian_wit_bindgen_gen_core::Source,
 }
 
 impl Source {

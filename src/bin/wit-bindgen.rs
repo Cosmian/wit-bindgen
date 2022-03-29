@@ -1,8 +1,8 @@
 use anyhow::{Context, Result};
+use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser, Files, Generator};
+use cosmian_wit_parser::Interface;
 use std::path::PathBuf;
 use structopt::StructOpt;
-use wit_bindgen_gen_core::{cosmian_wit_parser, Files, Generator};
-use cosmian_wit_parser::Interface;
 
 #[derive(Debug, StructOpt)]
 struct Opt {

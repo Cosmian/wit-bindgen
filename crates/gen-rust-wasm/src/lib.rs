@@ -3,10 +3,10 @@ use std::collections::BTreeMap;
 use std::io::{Read, Write};
 use std::mem;
 use std::process::{Command, Stdio};
-use wit_bindgen_gen_core::wit_parser::abi::{
+use cosmian_wit_bindgen_gen_core::cosmian_wit_parser::abi::{
     AbiVariant, Bindgen, Instruction, LiftLower, WasmType, WitxInstruction,
 };
-use wit_bindgen_gen_core::{wit_parser::*, Direction, Files, Generator, Source, TypeInfo, Types};
+use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser::*, Direction, Files, Generator, Source, TypeInfo, Types};
 use wit_bindgen_gen_rust::{
     int_repr, wasm_type, FnSig, RustFunctionGenerator, RustGenerator, TypeMode,
 };

@@ -96,7 +96,7 @@ impl App {
 
                 Ok((
                     name,
-                    wit_parser::Interface::parse_file(&path).with_context(|| {
+                    cosmian_wit_parser::Interface::parse_file(&path).with_context(|| {
                         format!("failed to parse interface file `{}`", path.display())
                     })?,
                 ))

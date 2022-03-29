@@ -4,6 +4,13 @@
 
 mod data_segments;
 
+use cosmian_wit_bindgen_gen_core::{
+    cosmian_wit_parser::{
+        abi::{self, AbiVariant, WasmSignature, WasmType},
+        Docs, Function, Interface, Record, ResourceId, SizeAlign, Type, TypeId, Variant,
+    },
+    Direction, Files, Generator,
+};
 use data_segments::DataSegments;
 use lazy_static::lazy_static;
 use std::borrow::Cow;
@@ -12,13 +19,6 @@ use std::ops::Range;
 use std::path::PathBuf;
 use std::{collections::HashMap, mem};
 use wasm_encoder::Instruction;
-use wit_bindgen_gen_core::{
-    wit_parser::{
-        abi::{self, AbiVariant, WasmSignature, WasmType},
-        Docs, Function, Interface, Record, ResourceId, SizeAlign, Type, TypeId, Variant,
-    },
-    Direction, Files, Generator,
-};
 
 #[allow(missing_docs)]
 #[derive(Default, Debug, Clone)]

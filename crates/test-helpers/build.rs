@@ -1,8 +1,8 @@
+use cosmian_wit_bindgen_gen_core::{cosmian_wit_parser::Interface, Generator};
 use std::env;
 use std::fs;
 use std::path::PathBuf;
 use std::process::Command;
-use wit_bindgen_gen_core::{wit_parser::Interface, Generator};
 
 fn main() {
     let out_dir = PathBuf::from(std::env::var_os("OUT_DIR").unwrap());

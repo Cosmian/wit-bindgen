@@ -12,11 +12,11 @@ test = false
 
 [dependencies]
 cosmian-wit-bindgen-gen-core = {path = '../gen-core', features = ['witx-compat']}
+cosmian-wit-bindgen-gen-rust-wasm = {path = '../gen-rust-wasm'}
 wasmprinter = "0.2.29"
 wit-bindgen-gen-c = {path = '../gen-c'}
 wit-bindgen-gen-js = {path = '../gen-js'}
 wit-bindgen-gen-markdown = {path = '../gen-markdown'}
-wit-bindgen-gen-rust-wasm = {path = '../gen-rust-wasm'}
 wit-bindgen-gen-spidermonkey = {path = '../gen-spidermonkey'}
 wit-bindgen-gen-wasmtime = {path = '../gen-wasmtime'}
 wit-bindgen-gen-wasmtime-py = {path = '../gen-wasmtime-py'}

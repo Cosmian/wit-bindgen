@@ -34,6 +34,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmian-wit-bindgen-gen-rust"
+version = "0.1.0"
+dependencies = [
+ "cosmian-wit-bindgen-gen-core",
+ "heck",
+]
+
+[[package]]
+name = "cosmian-wit-bindgen-gen-rust-wasm"
+version = "0.1.0"
+dependencies = [
+ "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust",
+ "heck",
+]
+
+[[package]]
 name = "cosmian-wit-parser"
 version = "0.1.0"
 dependencies = [
@@ -250,23 +267,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5fecdca9a5291cc2b8dcf7dc02453fee791a280f3743cb0905f8822ae463b3fe"
 
 [[package]]
-name = "wit-bindgen-gen-rust"
-version = "0.1.0"
-dependencies = [
- "cosmian-wit-bindgen-gen-core",
- "heck",
-]
-
-[[package]]
-name = "wit-bindgen-gen-rust-wasm"
-version = "0.1.0"
-dependencies = [
- "cosmian-wit-bindgen-gen-core",
- "heck",
- "wit-bindgen-gen-rust",
-]
-
-[[package]]
 name = "wit-bindgen-rust"
 version = "0.1.0"
 dependencies = [
@@ -280,7 +280,7 @@ name = "wit-bindgen-rust-impl"
 version = "0.1.0"
 dependencies = [
  "cosmian-wit-bindgen-gen-core",
+ "cosmian-wit-bindgen-gen-rust-wasm",
  "proc-macro2",
  "syn",
- "wit-bindgen-gen-rust-wasm",
 ]

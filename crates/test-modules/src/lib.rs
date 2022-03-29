@@ -47,7 +47,7 @@ mod tests {
                     Module::new(
                         name,
                         bytes,
-                        [wit_parser::Interface::parse_file(wit_path(name))?],
+                        [cosmian_wit_parser::Interface::parse_file(wit_path(name))?],
                     )?,
                 ))
             })

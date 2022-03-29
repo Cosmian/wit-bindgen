@@ -673,7 +673,10 @@ mod test {
         let a = Module::new(
             "a",
             &a,
-            [wit_parser::Interface::parse("a", "a: function(p: string)")?],
+            [cosmian_wit_parser::Interface::parse(
+                "a",
+                "a: function(p: string)",
+            )?],
         )?;
 
         let mut imports = HashMap::new();
@@ -702,7 +705,10 @@ mod test {
         let a = Module::new(
             "a",
             &a,
-            [wit_parser::Interface::parse("a", "a: function(p: string)")?],
+            [cosmian_wit_parser::Interface::parse(
+                "a",
+                "a: function(p: string)",
+            )?],
         )?;
 
         let mut imports = HashMap::new();
@@ -731,7 +737,10 @@ mod test {
         let a = Module::new(
             "a",
             &a,
-            [wit_parser::Interface::parse("a", "a: function(p: string)")?],
+            [cosmian_wit_parser::Interface::parse(
+                "a",
+                "a: function(p: string)",
+            )?],
         )?;
 
         let mut imports = HashMap::new();
