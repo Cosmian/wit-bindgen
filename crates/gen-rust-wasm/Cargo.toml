@@ -4,7 +4,7 @@ description = "wit-bindgen-gen-rust-wasm"
 edition = "2018"
 license = "Apache-2.0"
 name = "cosmian-wit-bindgen-gen-rust-wasm"
-version = "0.1.0"
+version = "0.1.1"
 
 [lib]
 doctest = false
